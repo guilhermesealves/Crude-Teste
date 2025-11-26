@@ -103,6 +103,9 @@ Ao abrir a aplicação, você verá uma **caixa com fundo semi-transparente** co
 
 ## Banco de Dados (Supabase)
 
+<img width="1094" height="481" alt="Database" src="https://github.com/user-attachments/assets/6a39f639-a7e3-4a21-9f39-786843fb45cc" />
+
+
 ### Tabela Categories
 - `id` (Primary Key)
 - `name` (Text, Not Null)
