@@ -104,8 +104,6 @@ assim quando adicionado e vai direto para a lista e tambem para o Supabase
 Temos a função de Excluir e Editar, a mesma coisa que a outro formulario
 
 
-<img width="1242" height="863" alt="print 15" src="https://github.com/user-attachments/assets/11bfcf0b-b5e8-4151-a5e0-c26f3898da97" />
-
 Editando
 
 <img width="1298" height="768" alt="Print 18" src="https://github.com/user-attachments/assets/a031fff3-25a3-4f84-a5ee-a923a1d69dd1" />
