@@ -1,129 +1,178 @@
-# Olá meu nome é Guilherme e finalizei o CRUD para REACT com o Supabase
+# CRUD React com Supabase
 
-Então aqui irei explicar como funciona minha aplicação e como foi feita.
+Olá, meu nome é **Guilherme Seleri** e finalizei um projeto de CRUD usando **React** e **Supabase**.  
 
-Comecei criando uma tabela para que eu possa visualizar o retorno do banco de dados,
-usando a API do supabase consegui observar se estava funcinando.
+Esta aplicação permite gerenciar **categorias** e **produtos**, com CRUD completo, alertas de confirmação e validação de campos obrigatórios.
 
-apos isso comecei a trabalhar no front-end, Criei um menu com botão para produtos e categorias 
+---
 
-<img width="696" height="594" alt="print  1" src="https://github.com/user-attachments/assets/23526d11-f488-4284-be52-1cd929296d23" />
+## Menu Inicial
 
+Ao abrir a aplicação, você verá uma **caixa com fundo semi-transparente** com a mensagem de boas-vindas e dois botões:
 
+- **Categorias** → Leva à tela de gerenciamento de categorias
+- **Produtos** → Leva à tela de gerenciamento de produtos
 
-<br>
+![Menu Inicial](https://github.com/user-attachments/assets/23526d11-f488-4284-be52-1cd929296d23)
 
+---
 
-Ao clicar em categorias voce entra neste layout 
-coloquei botões com efeitos para ficar mais visivil e mais bonito
+## Gerenciando Categorias
 
-<br>
+### Adicionar Categoria
 
+- Digite o nome da categoria no input e clique em **Adicionar Categoria**.
+- A categoria é adicionada à lista e salva no banco Supabase.
 
-<br>
-<img width="672" height="546" alt="print 2" src="https://github.com/user-attachments/assets/4fd761b9-8e34-41ef-9b1d-b06c85203aa9" />
+![Adicionar Categoria](https://github.com/user-attachments/assets/679ae16a-d5bd-4fd6-b9ef-a0c683ac06b7)
 
-<br>
+---
 
+### Lista de Categorias
 
-entrando em Categorias chegamos na parte de Inserir a categoria
+- Exibe todas as categorias cadastradas.
+- Mostra ID, Nome, Data de Criação e Ações.
 
+![Lista de Categorias](https://github.com/user-attachments/assets/cd282b23-2dd4-41d0-a2c1-c5a5ae2dbaaa)
 
- <br>
+---
 
- 
-<img width="926" height="732" alt="print 3" src="https://github.com/user-attachments/assets/679ae16a-d5bd-4fd6-b9ef-a0c683ac06b7" />
+### Editar Categoria
 
-onde eu escrevo o nome da categoria que eu quero criar, sendo assim abertando e inserindo a categoria
+- Clique em **Editar** na categoria desejada.
+- Um modal aparece permitindo alterar o nome.
+- Clique em **Salvar** para atualizar ou **Cancelar** para voltar.
 
+![Editar Categoria](https://github.com/user-attachments/assets/bcbaf0ac-2ba1-4728-8034-5ca012d300a4)
 
-<img width="1097" height="703" alt="pint 4" src="https://github.com/user-attachments/assets/cd282b23-2dd4-41d0-a2c1-c5a5ae2dbaaa" />]
+---
 
+### Deletar Categoria
 
-e cai diretamente para o Banco de Dados
+- Clique em **Deletar** na categoria desejada.
+- Um modal de confirmação pergunta se você tem certeza.
+- Clique em **Confirmar** para excluir ou **Cancelar** para voltar.
 
+![Deletar Categoria](https://github.com/user-attachments/assets/b66c0b5e-2ba8-4a5b-9356-9fa247580ac4)
 
-<img width="1333" height="853" alt="print 4" src="https://github.com/user-attachments/assets/bc227441-5d60-4bbf-af1f-f9d1b046620f" />
+---
 
+## Gerenciando Produtos
 
+### Adicionar Produto
 
-Voltando para a nossa aplicação temos dois botoes que sao o de Editar e o Deletar 
- <img width="870" height="227" alt="Print 5" src="https://github.com/user-attachments/assets/59ea19bd-2293-41c0-a3fd-de92b81c5334" />
- 
-quando clicamos em Editar 
+- Preencha **Nome**, **Preço** e selecione a **Categoria** no dropdown.
+- Clique em **Adicionar Produto**.
+- Se algum campo não estiver preenchido, aparece um **modal de aviso**.
 
-<img width="1101" height="671" alt="print 6" src="https://github.com/user-attachments/assets/bcbaf0ac-2ba1-4728-8034-5ca012d300a4" />
+![Adicionar Produto](https://github.com/user-attachments/assets/0d02fb39-2710-4b2a-95bb-9a248110b534)
+![Campos Obrigatórios](https://github.com/user-attachments/assets/8bd9a929-9d93-429c-a622-b055aa691b1a)
 
-Podemos Editar e Cancelar a categoria selecionada
+---
 
-Como tambem podemos deletar a categoria
+### Lista de Produtos
 
+- Exibe todos os produtos cadastrados.
+- Mostra ID, Nome, Preço, Categoria, Data de Criação e Ações.
 
+<img width="1383" height="879" alt="print 11" src="https://github.com/user-attachments/assets/b6a22d75-08af-4a31-89b6-369a1519380e" />
 
+---
 
+### Editar Produto
 
+- Clique em **Editar** no produto desejado.
+- Um modal aparece permitindo alterar Nome, Preço e Categoria.
+- Clique em **Salvar** para atualizar ou **Cancelar** para voltar.
 
 
+<img width="1242" height="863" alt="print 15" src="https://github.com/user-attachments/assets/eebec163-4d38-4964-9fdc-e4168cb806d9" />
 
-<img width="1372" height="769" alt="print 7" src="https://github.com/user-attachments/assets/f3a69c79-21c5-48f4-87d8-02710d041f51" />
+---
 
+### Deletar Produto
 
 
-Quando tentamos deletar ele mostra uma alrta se queremos ou nao deletar
+- Clique em **Deletar** no produto desejado.
+- Um modal de confirmação pergunta se você tem certeza.
+- Clique em **Confirmar** para excluir ou **Cancelar** para voltar.
 
+![Deletar Produto](https://github.com/user-attachments/assets/7f24bbc1-20e1-4b03-bcc6-435624566ef5)
 
-<img width="834" height="527" alt="priont 8" src="https://github.com/user-attachments/assets/b66c0b5e-2ba8-4a5b-9356-9fa247580ac4" />
+---
 
+## Banco de Dados (Supabase)
 
-Quando voltamos ao menu e entramos agora em Produtos
+### Tabela Categories
+- `id` (Primary Key)
+- `name` (Text, Not Null)
+- `created_at` (Timestamp)
 
+### Tabela Products
+- `id` (Primary Key)
+- `name` (Text, Not Null)
+- `price` (Numeric, Not Null)
+- `category_id` (Foreign Key → categories.id)
+- `created_at` (Timestamp)
 
-<img width="709" height="616" alt="print 9" src="https://github.com/user-attachments/assets/1044e7e3-eb34-4b7d-8e8c-2fc608c61e85" />
+---
 
-Conseguimos colocar o nome preço e tambem selecionar o dropdown
+## Design e Estilo
 
+- Layout moderno com **fundo desfocado**.
+- Botões estilizados com cores e efeitos de hover.
+- Inputs claros e legíveis.
+- Tabelas responsivas destacando ações (Editar e Deletar).
+- Modais consistentes para alertas e confirmações.
 
 
+## 📝 Pré-requisitos
 
+Antes de começar, você precisa ter:
 
+- [Node.js](https://nodejs.org/) (recomendado LTS)
+- npm (vem junto com Node.js)
+- Conta no [Supabase](https://supabase.com/) e projeto criado
+- URL do Supabase e API Key do projeto
 
-<img width="1126" height="795" alt="print 12" src="https://github.com/user-attachments/assets/0d02fb39-2710-4b2a-95bb-9a248110b534" />
+## Como Rodar
 
+Siga os passos abaixo para rodar o seu CRUD de Categorias e Produtos com React e Supabase:
 
+1. **Clone o projeto**
 
+```bash
+-git clone https://github.com/guilhermesealves/Crude-Teste
+```
+Acesse a pasta do projeto
+```bash
+-cd Crude-React
 
-<img width="1383" height="879" alt="print 11" src="https://github.com/user-attachments/assets/280550ca-5df5-4d48-8dd5-538086c5b052" />
+```
+Instale as dependências
+```bash
 
-assim quando adicionado e vai direto para a lista e tambem para o Supabase
+-npm install
+```
+```bash
+-import { createClient } from "@supabase/supabase-js";
 
-<img width="1271" height="816" alt="Print 13" src="https://github.com/user-attachments/assets/97df228c-11ad-4dda-a322-efdfa49e0faa" />
+export const supabase = createClient(
+  "(https://oqqnqjbhloqcwqrhezmx.supabase.co)",
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9xcW5xamJobG9xY3dxcmhlem14Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQxMzk4OTQsImV4cCI6MjA3OTcxNTg5NH0.rbEwcpORmwo8d-cUxQGr8dOLjQothY3xZcE0GplmNuQ"
+ ```
+Acesse
+```bash
+http://localhost:3000
+```
 
+);
 
 
 
-Temos a função de Excluir e Editar, a mesma coisa que a outro formulario
 
 
-Editando
 
-<img width="1298" height="768" alt="Print 18" src="https://github.com/user-attachments/assets/a031fff3-25a3-4f84-a5ee-a923a1d69dd1" />
 
 
-<img width="1219" height="857" alt="computador" src="https://github.com/user-attachments/assets/b876e0e0-25b5-42e9-ae70-bf7c0446eaf6" />
 
-<img width="1347" height="822" alt="proinot 12121" src="https://github.com/user-attachments/assets/4ee97296-eb80-4a39-98b2-181cceff8d43" />
-
-
-Como tambem o deletar
-
-<img width="1366" height="809" alt="deltarasa" src="https://github.com/user-attachments/assets/7f24bbc1-20e1-4b03-bcc6-435624566ef5" />
-
-
-
-<img width="1348" height="896" alt="dedededede" src="https://github.com/user-attachments/assets/13774c13-fd8d-42e0-b1bc-60e844f7b900" />
-
-
-Quando voce nao escreve todos os campos tambem aparece um aviso
-
-
-<img width="1360" height="846" alt="dasdsadsadasdsa" src="https://github.com/user-attachments/assets/8bd9a929-9d93-429c-a622-b055aa691b1a" />
