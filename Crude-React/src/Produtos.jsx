@@ -3,14 +3,15 @@ import { supabase } from "./CreateClient.js";
 import "./App.css";
 
 const App = () => {
-  const [view, setView] = useState("menu");
+  const [view, setView] = useState("menu"); 
 
+ 
   const [categories, setCategories] = useState([]);
   const [newCategory, setNewCategory] = useState("");
   const [modalCatOpen, setModalCatOpen] = useState(false);
   const [modalCategory, setModalCategory] = useState({ id: null, name: "" });
 
-
+  
   const [products, setProducts] = useState([]);
   const [newProduct, setNewProduct] = useState({
     name: "",
@@ -25,7 +26,7 @@ const App = () => {
     category_id: ""
   });
 
-
+  
   useEffect(() => {
     if (view === "categories") fetchCategories();
     if (view === "products") {
@@ -34,7 +35,6 @@ const App = () => {
     }
   }, [view]);
 
-
   async function fetchCategories() {
     const { data, error } = await supabase
       .from("clients")
@@ -42,7 +42,6 @@ const App = () => {
       .order("id", { ascending: true });
     if (!error) setCategories(data);
   }
-
 
   async function fetchProducts() {
     const { data, error } = await supabase
@@ -153,6 +152,8 @@ const App = () => {
   }
 
 
+
+
   if (view === "menu") {
     return (
       <div className="FormAll welcome-box">
@@ -169,6 +170,7 @@ const App = () => {
   if (view === "categories") {
     return (
       <div className="FormAll">
+        <button className="btn-back" onClick={() => setView("menu")}>Voltar ao Menu</button>
 
         <form onSubmit={handleAddCategory} className="form-box animate-form">
           <input
@@ -204,10 +206,8 @@ const App = () => {
               ))}
             </tbody>
           </table>
-         
-
         </div>
-        <button className="btn-back" onClick={() => setView("menu")}>Voltar ao Menu</button>
+
         {modalCatOpen && (
           <div className="modal-overlay">
             <div className="modal-box">
@@ -225,7 +225,6 @@ const App = () => {
           </div>
         )}
       </div>
-
     );
   }
 
@@ -233,7 +232,7 @@ const App = () => {
   if (view === "products") {
     return (
       <div className="FormAll">
-        
+        <button className="btn-back" onClick={() => setView("menu")}>Voltar ao Menu</button>
 
         <form onSubmit={handleAddProduct} className="form-box animate-form">
           <input
@@ -288,9 +287,7 @@ const App = () => {
               ))}
             </tbody>
           </table>
-
         </div>
-        <button className="btn-back" onClick={() => setView("menu")}>Voltar ao Menu</button>
 
         {modalProdOpen && (
           <div className="modal-overlay">
