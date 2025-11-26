@@ -20,5 +20,21 @@ coloquei botões com efeitos para ficar mais visivil e mais bonito
 <br>
 
 
-
+<br>
 <img width="672" height="546" alt="print 2" src="https://github.com/user-attachments/assets/4fd761b9-8e34-41ef-9b1d-b06c85203aa9" />
+
+<br>
+
+
+entrando em Categorias chegamos na parte de Inserir a categoria
+
+
+ <br>
+
+ 
+<img width="926" height="732" alt="print 3" src="https://github.com/user-attachments/assets/679ae16a-d5bd-4fd6-b9ef-a0c683ac06b7" />
+
+<img width="1097" height="703" alt="pint 4" src="https://github.com/user-attachments/assets/cd282b23-2dd4-41d0-a2c1-c5a5ae2dbaaa" />
+
+
+onde eu escrevo o nome da categoria que eu quero criar, sendo assim abertando e inserindo a categoria
