@@ -77,11 +77,19 @@ Quando tentamos deletar ele mostra uma alrta se queremos ou nao deletar
 
 Quando voltamos ao menu e entramos agora em Produtos
 
+<img width="1126" height="795" alt="print 12" src="https://github.com/user-attachments/assets/0d02fb39-2710-4b2a-95bb-9a248110b534" />
 
 
+
+Conseguimos colocar o nome preço e tambem selecionar o dropdown
 
 <img width="709" height="616" alt="print 9" src="https://github.com/user-attachments/assets/1044e7e3-eb34-4b7d-8e8c-2fc608c61e85" />
 
-Conseguimos colocar o nome preço e tambem selecionar o dropdown
+
+
+
+
+
+
 
 <img width="1383" height="879" alt="print 11" src="https://github.com/user-attachments/assets/280550ca-5df5-4d48-8dd5-538086c5b052" />
