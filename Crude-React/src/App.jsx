@@ -9,7 +9,8 @@ const App = () => {
   const [newCategory, setNewCategory] = useState("");
   const [modalCatOpen, setModalCatOpen] = useState(false);
   const [modalCategory, setModalCategory] = useState({ id: null, name: "" });
-
+  const [deleteCatOpen, setDeleteCatOpen] = useState(false);
+  const [categoryToDelete, setCategoryToDelete] = useState(null);
 
   const [products, setProducts] = useState([]);
   const [newProduct, setNewProduct] = useState({
@@ -24,7 +25,12 @@ const App = () => {
     price: "",
     category_id: ""
   });
+  const [deleteProdOpen, setDeleteProdOpen] = useState(false);
+  const [productToDelete, setProductToDelete] = useState(null);
 
+  // Novo: Modal de alerta para campos obrigatórios
+  const [alertOpen, setAlertOpen] = useState(false);
+  const [alertMessage, setAlertMessage] = useState("");
 
   useEffect(() => {
     if (view === "categories") fetchCategories();
@@ -34,7 +40,7 @@ const App = () => {
     }
   }, [view]);
 
-
+  // ======== FETCH ========
   async function fetchCategories() {
     const { data, error } = await supabase
       .from("clients")
@@ -42,7 +48,6 @@ const App = () => {
       .order("id", { ascending: true });
     if (!error) setCategories(data);
   }
-
 
   async function fetchProducts() {
     const { data, error } = await supabase
@@ -52,28 +57,22 @@ const App = () => {
     if (!error) setProducts(data);
   }
 
-
+  // ======== CATEGORY HANDLERS ========
   async function handleAddCategory(e) {
     e.preventDefault();
-    if (!newCategory) return;
-
+    if (!newCategory) {
+      setAlertMessage("O nome da categoria é obrigatório!");
+      setAlertOpen(true);
+      return;
+    }
     const { data, error } = await supabase
       .from("clients")
       .insert([{ name: newCategory }])
       .select();
-
     if (!error && data) {
       setCategories(prev => [...prev, data[0]]);
       setNewCategory("");
     }
-  }
-
-  async function handleDeleteCategory(id) {
-    const { error } = await supabase
-      .from("clients")
-      .delete()
-      .eq("id", id);
-    if (!error) setCategories(prev => prev.filter(c => c.id !== id));
   }
 
   function openCategoryModal(category) {
@@ -83,13 +82,11 @@ const App = () => {
 
   async function handleSaveCategory() {
     if (!modalCategory.name) return;
-
     const { data, error } = await supabase
       .from("clients")
       .update({ name: modalCategory.name })
       .eq("id", modalCategory.id)
       .select();
-
     if (!error && data) {
       setCategories(prev =>
         prev.map(c => (c.id === modalCategory.id ? data[0] : c))
@@ -98,10 +95,33 @@ const App = () => {
     }
   }
 
+  function openDeleteCategory(category) {
+    setCategoryToDelete(category);
+    setDeleteCatOpen(true);
+  }
 
+  async function handleDeleteCategory() {
+    const { error } = await supabase
+      .from("clients")
+      .delete()
+      .eq("id", categoryToDelete.id);
+    if (!error) {
+      setCategories(prev => prev.filter(c => c.id !== categoryToDelete.id));
+      setDeleteCatOpen(false);
+      setCategoryToDelete(null);
+    }
+  }
+
+  // ======== PRODUCT HANDLERS ========
   async function handleAddProduct(e) {
     e.preventDefault();
-    if (!newProduct.name || !newProduct.price || !newProduct.category_id) return;
+
+    // Validação com modal
+    if (!newProduct.name || !newProduct.price || !newProduct.category_id) {
+      setAlertMessage("Por favor, preencha todos os campos do produto!");
+      setAlertOpen(true);
+      return;
+    }
 
     const { data, error } = await supabase
       .from("products")
@@ -111,19 +131,10 @@ const App = () => {
         category_id: newProduct.category_id
       }])
       .select();
-
     if (!error && data) {
       setProducts(prev => [...prev, data[0]]);
       setNewProduct({ name: "", price: "", category_id: "" });
     }
-  }
-
-  async function handleDeleteProduct(id) {
-    const { error } = await supabase
-      .from("products")
-      .delete()
-      .eq("id", id);
-    if (!error) setProducts(prev => prev.filter(p => p.id !== id));
   }
 
   function openProductModal(product) {
@@ -133,7 +144,6 @@ const App = () => {
 
   async function handleSaveProduct() {
     if (!modalProduct.name || !modalProduct.price || !modalProduct.category_id) return;
-
     const { data, error } = await supabase
       .from("products")
       .update({
@@ -143,7 +153,6 @@ const App = () => {
       })
       .eq("id", modalProduct.id)
       .select();
-
     if (!error && data) {
       setProducts(prev =>
         prev.map(p => (p.id === modalProduct.id ? data[0] : p))
@@ -152,7 +161,24 @@ const App = () => {
     }
   }
 
+  function openDeleteProduct(product) {
+    setProductToDelete(product);
+    setDeleteProdOpen(true);
+  }
 
+  async function handleDeleteProduct() {
+    const { error } = await supabase
+      .from("products")
+      .delete()
+      .eq("id", productToDelete.id);
+    if (!error) {
+      setProducts(prev => prev.filter(p => p.id !== productToDelete.id));
+      setDeleteProdOpen(false);
+      setProductToDelete(null);
+    }
+  }
+
+  // ======== VIEWS ========
   if (view === "menu") {
     return (
       <div className="FormAll welcome-box">
@@ -165,7 +191,7 @@ const App = () => {
     );
   }
 
-
+  // === CATEGORIES ===
   if (view === "categories") {
     return (
       <div className="FormAll">
@@ -198,16 +224,17 @@ const App = () => {
                   <td>{new Date(c.created_at).toLocaleString()}</td>
                   <td className="actions">
                     <button className="edit" onClick={() => openCategoryModal(c)}>Editar</button>
-                    <button className="delete" onClick={() => handleDeleteCategory(c.id)}>Deletar</button>
+                    <button className="delete" onClick={() => openDeleteCategory(c)}>Deletar</button>
                   </td>
                 </tr>
               ))}
             </tbody>
           </table>
-         
-
         </div>
+
         <button className="btn-back" onClick={() => setView("menu")}>Voltar ao Menu</button>
+
+        {/* MODAL EDIT */}
         {modalCatOpen && (
           <div className="modal-overlay">
             <div className="modal-box">
@@ -224,16 +251,42 @@ const App = () => {
             </div>
           </div>
         )}
-      </div>
 
+        {/* MODAL DELETE */}
+        {deleteCatOpen && (
+          <div className="modal-overlay">
+            <div className="modal-box">
+              <h2>Tem certeza que deseja deletar?</h2>
+              <p>{categoryToDelete?.name}</p>
+              <div className="buttons">
+                <button className="send" onClick={handleDeleteCategory}>Confirmar</button>
+                <button className="btn-back" onClick={() => setDeleteCatOpen(false)}>Cancelar</button>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* MODAL ALERT */}
+        {alertOpen && (
+          <div className="modal-overlay">
+            <div className="modal-box">
+              <h2>Atenção!</h2>
+              <p>{alertMessage}</p>
+              <div className="buttons">
+                <button className="btn-back" onClick={() => setAlertOpen(false)}>OK</button>
+              </div>
+            </div>
+          </div>
+        )}
+
+      </div>
     );
   }
 
-
+  // === PRODUCTS ===
   if (view === "products") {
     return (
       <div className="FormAll">
-        
 
         <form onSubmit={handleAddProduct} className="form-box animate-form">
           <input
@@ -282,16 +335,17 @@ const App = () => {
                   <td>{new Date(p.created_at).toLocaleString()}</td>
                   <td className="actions">
                     <button className="edit" onClick={() => openProductModal(p)}>Editar</button>
-                    <button className="delete" onClick={() => handleDeleteProduct(p.id)}>Deletar</button>
+                    <button className="delete" onClick={() => openDeleteProduct(p)}>Deletar</button>
                   </td>
                 </tr>
               ))}
             </tbody>
           </table>
-
         </div>
+
         <button className="btn-back" onClick={() => setView("menu")}>Voltar ao Menu</button>
 
+        {/* MODAL EDIT PRODUCT */}
         {modalProdOpen && (
           <div className="modal-overlay">
             <div className="modal-box">
@@ -324,6 +378,34 @@ const App = () => {
             </div>
           </div>
         )}
+
+        {/* MODAL DELETE PRODUCT */}
+        {deleteProdOpen && (
+          <div className="modal-overlay">
+            <div className="modal-box">
+              <h2>Tem certeza que deseja deletar?</h2>
+              <p>{productToDelete?.name}</p>
+              <div className="buttons">
+                <button className="send" onClick={handleDeleteProduct}>Confirmar</button>
+                <button className="btn-back" onClick={() => setDeleteProdOpen(false)}>Cancelar</button>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* MODAL ALERT */}
+        {alertOpen && (
+          <div className="modal-overlay">
+            <div className="modal-box">
+              <h2>Atenção!</h2>
+              <p>{alertMessage}</p>
+              <div className="buttons">
+                <button className="btn-back" onClick={() => setAlertOpen(false)}>OK</button>
+              </div>
+            </div>
+          </div>
+        )}
+
       </div>
     );
   }
