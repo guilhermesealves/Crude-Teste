@@ -34,7 +34,34 @@ entrando em Categorias chegamos na parte de Inserir a categoria
  
 <img width="926" height="732" alt="print 3" src="https://github.com/user-attachments/assets/679ae16a-d5bd-4fd6-b9ef-a0c683ac06b7" />
 
-<img width="1097" height="703" alt="pint 4" src="https://github.com/user-attachments/assets/cd282b23-2dd4-41d0-a2c1-c5a5ae2dbaaa" />
-
-
 onde eu escrevo o nome da categoria que eu quero criar, sendo assim abertando e inserindo a categoria
+
+
+<img width="1097" height="703" alt="pint 4" src="https://github.com/user-attachments/assets/cd282b23-2dd4-41d0-a2c1-c5a5ae2dbaaa" />]
+
+
+e cai diretamente para o Banco de Dados
+
+
+<img width="1333" height="853" alt="print 4" src="https://github.com/user-attachments/assets/bc227441-5d60-4bbf-af1f-f9d1b046620f" />
+
+
+
+Voltando para a nossa aplicação temos dois botoes que sao o de Editar e o Deletar 
+ <img width="870" height="227" alt="Print 5" src="https://github.com/user-attachments/assets/59ea19bd-2293-41c0-a3fd-de92b81c5334" />
+ 
+quando clicamos em Editar 
+
+<img width="1101" height="671" alt="print 6" src="https://github.com/user-attachments/assets/bcbaf0ac-2ba1-4728-8034-5ca012d300a4" />
+
+Podemos Editar e Cancelar a categoria selecionada
+
+
+
+
+
+
+
+
+
+
