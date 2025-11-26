@@ -99,7 +99,7 @@ assim quando adicionado e vai direto para a lista e tambem para o Supabase
 <img width="1271" height="816" alt="Print 13" src="https://github.com/user-attachments/assets/97df228c-11ad-4dda-a322-efdfa49e0faa" />
 
 
-<img width="1361" height="507" alt="print 14" src="https://github.com/user-attachments/assets/0a10655f-aff0-49b7-bdc8-b0860ac0e730" />
+
 
 Temos a função de Excluir e Editar, a mesma coisa que a outro formulario
 
