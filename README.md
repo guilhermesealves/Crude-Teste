@@ -93,3 +93,39 @@ Conseguimos colocar o nome preço e tambem selecionar o dropdown
 
 
 <img width="1383" height="879" alt="print 11" src="https://github.com/user-attachments/assets/280550ca-5df5-4d48-8dd5-538086c5b052" />
+
+assim quando adicionado e vai direto para a lista e tambem para o Supabase
+
+<img width="1271" height="816" alt="Print 13" src="https://github.com/user-attachments/assets/97df228c-11ad-4dda-a322-efdfa49e0faa" />
+
+
+<img width="1361" height="507" alt="print 14" src="https://github.com/user-attachments/assets/0a10655f-aff0-49b7-bdc8-b0860ac0e730" />
+
+Temos a função de Excluir e Editar, a mesma coisa que a outro formulario
+
+
+<img width="1242" height="863" alt="print 15" src="https://github.com/user-attachments/assets/11bfcf0b-b5e8-4151-a5e0-c26f3898da97" />
+
+Editando
+
+<img width="1298" height="768" alt="Print 18" src="https://github.com/user-attachments/assets/a031fff3-25a3-4f84-a5ee-a923a1d69dd1" />
+
+
+<img width="1219" height="857" alt="computador" src="https://github.com/user-attachments/assets/b876e0e0-25b5-42e9-ae70-bf7c0446eaf6" />
+
+<img width="1347" height="822" alt="proinot 12121" src="https://github.com/user-attachments/assets/4ee97296-eb80-4a39-98b2-181cceff8d43" />
+
+
+Como tambem o deletar
+
+<img width="1366" height="809" alt="deltarasa" src="https://github.com/user-attachments/assets/7f24bbc1-20e1-4b03-bcc6-435624566ef5" />
+
+
+
+<img width="1348" height="896" alt="dedededede" src="https://github.com/user-attachments/assets/13774c13-fd8d-42e0-b1bc-60e844f7b900" />
+
+
+Quando voce nao escreve todos os campos tambem aparece um aviso
+
+
+<img width="1360" height="846" alt="dasdsadsadasdsa" src="https://github.com/user-attachments/assets/8bd9a929-9d93-429c-a622-b055aa691b1a" />
