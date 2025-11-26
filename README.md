@@ -56,6 +56,7 @@ quando clicamos em Editar
 
 Podemos Editar e Cancelar a categoria selecionada
 
+Como tambem podemos deletar a categoria
 
 
 
@@ -64,4 +65,23 @@ Podemos Editar e Cancelar a categoria selecionada
 
 
 
+<img width="1372" height="769" alt="print 7" src="https://github.com/user-attachments/assets/f3a69c79-21c5-48f4-87d8-02710d041f51" />
 
+
+
+Quando tentamos deletar ele mostra uma alrta se queremos ou nao deletar
+
+
+<img width="834" height="527" alt="priont 8" src="https://github.com/user-attachments/assets/b66c0b5e-2ba8-4a5b-9356-9fa247580ac4" />
+
+
+Quando voltamos ao menu e entramos agora em Produtos
+
+
+
+
+<img width="709" height="616" alt="print 9" src="https://github.com/user-attachments/assets/1044e7e3-eb34-4b7d-8e8c-2fc608c61e85" />
+
+Conseguimos colocar o nome preço e tambem selecionar o dropdown
+
+<img width="1383" height="879" alt="print 11" src="https://github.com/user-attachments/assets/280550ca-5df5-4d48-8dd5-538086c5b052" />
