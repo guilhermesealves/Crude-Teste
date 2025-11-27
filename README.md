@@ -5,7 +5,8 @@ Olá, meu nome é **Guilherme Seleri** e finalizei um projeto de CRUD usando **R
 Esta aplicação permite gerenciar **categorias** e **produtos**, com CRUD completo, alertas de confirmação e validação de campos obrigatórios.
 
 ---
-
+Você pode acessar direto pelo site https://crude-teste.vercel.app/
+---
 ## Menu Inicial
 
 Ao abrir a aplicação, você verá uma **caixa com fundo semi-transparente** com a mensagem de boas-vindas e dois botões:
